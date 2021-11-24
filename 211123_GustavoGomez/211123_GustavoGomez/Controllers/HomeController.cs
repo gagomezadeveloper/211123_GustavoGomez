@@ -37,6 +37,7 @@ namespace _211123_GustavoGomez.Controllers
                     string resultContent = await result.Content.ReadAsStringAsync();
                     Data.ApiResponseDtos.Add(System.Text.Json.JsonSerializer.Deserialize<ApiResponseDto>(resultContent));
                 }
+                ViewData["Date"] = $"{DateTime.Now:yyyy/MM/dd HH:mm:ss}";
             }
             catch (Exception ex)
             {
