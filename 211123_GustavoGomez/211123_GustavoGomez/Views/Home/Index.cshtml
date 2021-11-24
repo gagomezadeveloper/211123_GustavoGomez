@@ -1,0 +1,46 @@
+﻿@model _211123_GustavoGomez.Models.DataViewModel
+
+@{
+    ViewData["Title"] = "211123_GustavoGomez";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Api Data</h1>
+</div>
+
+<div class="container pt-2">
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.ApiResponseDtos.First().CompanyID)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.ApiResponseDtos.First().IMEI)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.ApiResponseDtos.First().VehicleID)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.ApiResponseDtos)
+            {
+                <tr>
+                    <td scope="row">
+                        @Html.DisplayFor(modelItem => item.CompanyID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IMEI)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.VehicleID)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
